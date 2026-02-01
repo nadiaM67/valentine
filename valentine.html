@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Comic Sans MS', 'Poppins', cursive;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+    }
+
+    .card {
+      background: #fff0f5;
+      padding: 40px 50px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ff6f91;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #noBtn {
+      background: #ffd1dc;
+      color: #ff4d6d;
+      position: absolute;
+    }
+
+    .result {
+      display: none;
+    }
+
+    .result h2 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    .result img {
+      width: 250px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="question">
+    <h1>Bibi 💕</h1>
+    <p>Will you be my Valentine?</p>
+    <div style="position: relative; height: 60px;">
+      <button id="yesBtn">Yes 💖</button>
+      <button id="noBtn">No 💔</button>
+    </div>
+  </div>
+
+  <div class="card result" id="result">
+    <h2>THAT'S RIGHT BITCH, YOU'RE MINE FOREVER! 😼💖</h2>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2E1cGxkMGNnYjZ3ZDNkZXl0cHJlYWZ4d2J1b3R1cGZ2N2E3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="Cute cats gif">
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const question = document.getElementById('question');
+    const result = document.getElementById('result');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * 250;
+      const y = Math.random() * 40;
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    });
+
+    yesBtn.addEventListener('click', () => {
+      question.style.display = 'none';
+      result.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
